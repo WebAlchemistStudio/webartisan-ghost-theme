@@ -1,0 +1,36 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+{{!-- The big featured header --}}
+<header class="main-header" style="background-image: url({{asset "images/main-background.png"}})">
+    <nav class="main-nav overlay clearfix">
+        {{> navigation}}
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <a class="blog-logo" href="#"><img src="{{asset "images/webartisan.png"}}" alt="{{@blog.title}}" /></a>
+            <h1 class="page-title">Web Artisan Studio</h1>
+            <h2 class="page-description">We build websites that <span id='index-features'>:features</span></h2>
+        </div>
+    </div>
+    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+</header>
+
+{{!-- The main content area on the homepage --}}
+<main id="content" class="content" role="main">
+
+    {{!-- The tag below includes the post loop - partials/loop.hbs --}}
+    {{> home}}
+
+</main>
+
+<script>
+    $(function(){
+        Typed.new('#index-features', {
+            strings: ["drive sales.", "works.", "adapts to the market.", "is beautiful.", "is affordable."],
+            typeSpeed: 20,
+            loop: true,
+            backDelay: 2000
+        });
+    });
+</script>
