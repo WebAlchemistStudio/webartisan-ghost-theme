@@ -682,37 +682,23 @@ body.nav-opened .nav-cover {
 
 .nav {
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 5;
-    width: 240px;
-    opacity: 0;
-    background: #111;
-    margin-bottom: 0;
-    text-align: left;
-    overflow-y: auto;
-    -webkit-transition: -webkit-transform 0.5s ease,
-                        opacity 0.3s ease 0.7s;
-            transition: transform 0.5s ease,
-                        opacity 0.3s ease 0.7s;
+    top:0;
+    left:0;
+    background-color: #2E2E2E;
+    width:100%;
+    height:60px;
+    z-index: 99;
+    transition: all ease 0.5s;
 }
 
-body.nav-closed .nav {
-    -webkit-transform: translate3D(97px, 0, 0);
-        -ms-transform: translate3D(97px, 0, 0);
-            transform: translate3D(97px, 0, 0);
+.nav.small {
+    height:50px;
+    transition: all ease 0.5s;
 }
 
-body.nav-opened .nav {
-    opacity: 1;
-    -webkit-transition: -webkit-transform 0.3s ease,
-                        opacity 0s ease 0s;
-            transition: transform 0.3s ease,
-                        opacity 0s ease 0s;
-    -webkit-transform: translate3D(0, 0, 0);
-        -ms-transform: translate3D(0, 0, 0);
-            transform: translate3D(0, 0, 0);
+.nav.small ul {
+    line-height: 50px;
+    transition: all ease 0.5s;
 }
 
 .nav-title {
@@ -770,26 +756,32 @@ body.nav-opened .nav {
 }
 
 .nav ul {
-    padding: 90px 9% 5%;
+    margin:0;
+    padding: 0;
     list-style: none;
     counter-reset: item;
+    text-align: left;
+    color:white;
+    line-height: 60px;
+    padding-left: 10%;
+    transition: all ease 0.5s;
 }
 
-.nav li:before {
-    display: block;
-    float: right;
-    padding-right: 4%;
-    padding-left: 5px;
-    text-align: right;
-    font-size: 1.2rem;
-    vertical-align: bottom;
-    color: #B8B8B8;
-    content: counter(item, lower-roman);
-    counter-increment: item;
-}
 .nav li {
     margin: 0;
+    display: inline-block;
+    padding-right: 30px;
+    opacity: 0.7;
+    font-size: 15px;
+    transition: all ease 0.5s;
+    cursor: pointer;
 }
+
+.nav li:hover {
+    opacity: 1;
+    transition: all ease 0.5s;
+}
+
 .nav li a {
     text-decoration: none;
     line-height: 1.4;
